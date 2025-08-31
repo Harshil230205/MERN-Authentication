@@ -11,13 +11,13 @@ export const sendVerificationEmail = async (email, verificationToken) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "harshil23kachhadiya@gmail.com",
-      pass: "svls mqpu tfaj lpao",
+      user: process.env.GMAIL_ID,
+      pass: process.env.MAIL_KEY,
     },
   });
 
   let mailOptions = {
-    from: "harshil23kachhadiya@gmail.com",
+    from: process.env.GMAIL_ID,
     to: email,
     subject: "Verify your email",
     html: VERIFICATION_EMAIL_TEMPLATE.replace(
@@ -40,19 +40,16 @@ export const sendWelcomeEmail = async (email, name) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "harshil23kachhadiya@gmail.com",
-      pass: "edwn pfla nutv uxop",
+      user: process.env.GMAIL_ID,
+      pass: process.env.MAIL_KEY,
     },
   });
 
   let mailOptions = {
-    from: "harshil23kachhadiya@gmail.com",
+   from: process.env.GMAIL_ID,
     to: email,
     subject: "Verify your email",
-    html: WELCOME_EMAIL_TEMPLATE.replace(
-      "{NAME}",
-      name
-    ),
+    html: WELCOME_EMAIL_TEMPLATE.replace("{NAME}", name),
     category: "Email Verification",
   };
 
@@ -69,13 +66,13 @@ export const sendPasswordResetEmail = async (email, resetURL) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "harshil23kachhadiya@gmail.com",
-      pass: "edwn pfla nutv uxop",
+      user: process.env.GMAIL_ID,
+      pass: process.env.MAIL_KEY,
     },
   });
 
   let mailOptions = {
-    from: "harshil23kachhadiya@gmail.com",
+    from: process.env.GMAIL_ID,
     to: email,
     subject: "Reset your password",
     html: PASSWORD_RESET_REQUEST_TEMPLATE.replace("{resetURL}", resetURL),
@@ -96,13 +93,13 @@ export const sendResetSuccessEmail = async (email) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "harshil23kachhadiya@gmail.com",
-      pass: "edwn pfla nutv uxop",
+      user: process.env.GMAIL_ID,
+      pass: process.env.MAIL_KEY,
     },
   });
 
   let mailOptions = {
-    from: "harshil23kachhadiya@gmail.com",
+    from: process.env.GMAIL_ID,
     to: email,
 
     subject: "Password Reset Successful",

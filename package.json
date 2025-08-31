@@ -5,7 +5,7 @@
   "main": "backend/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":  "node backend/index.js",
+    "start": "node backend/index.js",
     "dev": "nodemon backend/index.js",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
@@ -26,5 +26,13 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harshil230205/MERN-Authentication.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Harshil230205/MERN-Authentication/issues"
+  },
+  "homepage": "https://github.com/Harshil230205/MERN-Authentication#readme"
 }

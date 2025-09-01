@@ -1,4 +1,14 @@
+[build]
+  publish = "build"    # your build folder name
+  command = "npm run build"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
+  status = 200
+
+# Form handling (agar forms use karo cho)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
   status = 200

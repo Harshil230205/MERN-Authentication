@@ -138,9 +138,9 @@ export const forgotPassword = async (req, res) => {
 		user.resetPasswordExpiresAt = resetTokenExpiresAt;
 
 		await user.save();
-
+		const  CLIENT_URL = process.env.CLIENT_URL || "https://mern-authentication-xt8i.onrender.com/"
 		// send email
-		await sendPasswordResetEmail(user.email, `${process.env.CLIENT_URL}/reset-password/${resetToken}`);
+		await sendPasswordResetEmail(user.email, `${CLIENT_URL}/reset-password/${resetToken}`);
 
 		res.status(200).json({ success: true, message: "Password reset link sent to your email" });
 	} catch (error) {
